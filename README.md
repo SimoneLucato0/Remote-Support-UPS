@@ -1,46 +1,60 @@
-# Getting Started with Create React App
+# Remote Support UPS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/user-attachments/assets/48d6926d-bfe2-4944-8589-1d2d1763d616)
 
-## Available Scripts
+This project was conducted as the final assignment for the 2021/2022 Software Engineering course, led by Prof. Tullio Vardanega at the University of Padova, in collaboration with Socomec.
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+An Uninterruptible Power Supply (UPS) provides immediate backup power during outages, ensuring electronic devices remain operational without interruption. UPS systems are essential in data centers, healthcare, telecommunications, and home offices, preventing data loss and maintaining critical operations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Purpose
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The primary goal was the creation of a **VIRTUAL DISPLAY**, the human-machine interface, showcasing data and the overall status of a UPS device to clients using Flutter.
+The aim included the creation of a **REMOTE SUPPORT**, a service that connects a client and a remote technician, allowing to provide immediate assistance and support to the client.
 
-### `npm test`
+The **REMOTE SUPPORT** module consists of two main sub-modules:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Authentication and signaling server**, which enabled authentication of both the client and the technician and allowed the flow of information about the UPS from the client to the technician;
+- **Technician web application**, which enabled the technician to log-in, deal with incoming calls, see UPS information during a call with the client and edit personal information.
 
-### `npm run build`
+This repository contains the latter part of the **REMOTE SUPPORT** and is the upload of a part of the original repository that can be found at the following [link](https://gitlab.com/byteapplesweunipd/swe-project) (Italian only). The original repository contains the documentation (requirements analysis, definition of technologies and software architecture, user manual, maintenance manual, etc.) and the code for both the **VIRTUAL DISPLAY** and the server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Key features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **MVVM Architecture**: The project is built using the Model-View-ViewModel (MVVM) pattern, promoting a clear separation of concerns. This architecture enhances maintainability and testability, allowing developers to focus on individual components without intertwining logic.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **WebRTC Middleware**: This project features a dynamic middleware that handles WebRTC signaling using Socket.IO for real-time communication. It initializes peer connections, captures media streams from users, and creates a data channel for transmitting additional information, such as UPS connection status and measurements. It integrates with Redux for efficient state management, dispatching updates for call states and client information.
 
-### `npm run eject`
+- **Responsive Design**: The user interface is designed to be responsive, providing a seamless experience across various devices and screen sizes.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Unit Testing**: The project includes unit tests for critical components, ensuring that the code behaves as expected and reducing the likelihood of bugs during future development.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/SimoneLucato0/Virtual-Display-UPS.git
+   cd Virtual-Display-UPS
+   ```
+2. **Install the dependencies**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   npm install
+   ```
+
+3. **Start the servers**
+
+   For the sake of semplicity, I'll assume both servers (authentication and signaling) are running. Their respective code can be found [here](https://gitlab.com/byteapplesweunipd/swe-project/-/tree/main/prodotto/backend/server-auth?ref_type=heads) and [here](https://gitlab.com/byteapplesweunipd/swe-project/-/tree/main/prodotto/backend/server-signaling?ref_type=heads).
+
+4. **Run the application**
+   ```bash
+   npm start
+   ```
+   Then, open your web browser and go to `http://localhost:3000` to access the technician's application.
