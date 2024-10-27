@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", "Roboto", sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+#availability-switch {
+  width: 3.5em;
+  height: 1.5em;
+}
+
+#availability-switch:checked {
+  background-color: #044994;
+}
+
+.min-height {
+  min-height: 100vh;
+}
+
+.max-height-50 {
+  max-height: 50vh;
+}
+
+.max-height-44 {
+  max-height: 44vh;
+}
+
+button[role="tab"] {
+  color:#044994
+}
+
+.ups-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ups-row:nth-child(even) {
+  background-color: whitesmoke;
+}
+
+.spinner-size[role="status"] {
+  height: 3em;
+  width: 3em;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-whitesmoke {
+  background-color: whitesmoke;
+}
+
+.bg-socomec {
+  background-color: #044994;
+  border: 0;
+}
+
+button.bg-socomec {
+  background-color: #044994;
+  border-color: #044994;
+}
+
+.lgbt-shadow {
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+.socomec {
+  color: #044994;
+}
+
+.white-shadow {
+  box-shadow: whitesmoke 0px 0px 5px 0px;
+}
+
+
+/** RESPONSIVNESS, break-pint: 576px**/
+.tcode{
+  margin-bottom: 18vh;
+}
+
+@media screen and (max-width: 576px) {
+  #sidebar {
+     min-height: 100vh;
+     max-height: 100vh;
+  }
+
+  .btn-logout{
+    margin-top: 1em !important;
+  }
+
+  .tcode{
+    margin-bottom: 5vh;
+  }
+}
